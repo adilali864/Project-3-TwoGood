@@ -14,7 +14,8 @@
     color: white;
     background-color: black;
 }
-#nav{
+
+#nav {
     height: 100px;
     width: 100%;
     /* background-color: brown; */
@@ -25,54 +26,80 @@
     align-items: flex-start;
     justify-content: space-between;
 }
-#nav-left svg{
+
+#nav-left svg {
     display: block;
 }
-#nav-left{
+
+#nav-left {
     height: 83px;
     /* background-color: red; */
     overflow: hidden;
 }
-#nav-right{
+
+#nav-right {
     padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 40px;
 }
-#nav-right #links a{
+
+#nav-right #links a {
+    position: relative;
     margin: 0 40px;
     text-decoration: none;
     color: rgb(77, 77, 77);
     font-weight: 100;
-}
-#nav-right #links a:hover{
-    border-bottom: 1px solid black;
+    padding-bottom: 4px;
 }
 
-#nav-right #icons{
+#nav-right #links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: black;
+    transition: width 0.3s ease;
+}
+
+#nav-right #links a:hover {
+    color: rgb(107, 107, 107);
+}
+
+#nav-right #links a:hover::after {
+    width: 100%;
+    background: rgb(107, 107, 107);
+}
+
+#nav-right #icons {
     border-radius: 50px;
     height: 40px;
     display: flex;
     align-items: center;
-    background-color: #F7F7F7;   
+    background-color: #F7F7F7;
 }
-#nav-right #icons i{
+
+#nav-right #icons i {
     margin: 0 40px;
     text-decoration: none;
     color: rgb(77, 77, 77);
 }
-#cursor{
+
+#cursor {
     height: 300px;
     width: 300px;
     /* background-color: red; */
     border-radius: 50%;
-    transform: translate(-50%,-50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
     position: fixed;
     filter: blur(10px);
 }
 
-html,body {
+html,
+body {
     height: 100%;
     width: 100%;
     background-color: #F7F7F7;
@@ -227,7 +254,8 @@ html,body {
 #text2 a:hover {
     border-bottom: 0px;
 }
-#catalogue{
+
+#catalogue {
     min-height: 120vh;
     width: 100%;
     display: flex;
@@ -237,16 +265,38 @@ html,body {
     position: relative;
     /* background: red; */
 }
-.child{
+
+.child {
     height: 29vw;
     width: 35vw;
     /* background-color: red; */
-    
+
     display: flex;
     align-items: center;
+    flex-direction: column;
     /* border: 1px solid black; */
 }
-.child img{
+
+.child p {
+    font-weight: 100;
+    font-size: 0.9rem;
+}
+
+.child img {
     height: 100%;
     width: 100%;
+}
+
+#icons i {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.burger:hover {
+    transform: scaleY(0.8);
+
+}
+
+.cart:hover {
+    transform: rotate(-10deg)
 }
